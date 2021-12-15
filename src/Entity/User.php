@@ -52,6 +52,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $country;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lastName;
+
+    /**
+     * @ORM\Column(type="string", length=1)
+     */
+    private $gender;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -154,6 +164,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setCountry(string $country): self
     {
         $this->country = $country;
+
+        return $this;
+    }
+
+    public function getLastName(): ?string
+    {
+        return $this->lastName;
+    }
+
+    public function setLastName(string $lastName): self
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    public function getGender(): ?string
+    {
+        return $this->gender;
+    }
+
+    public function setGender(string $gender): self
+    {
+        $this->gender = $gender;
 
         return $this;
     }
