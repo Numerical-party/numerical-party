@@ -31,7 +31,7 @@
 						</li>
 						{% if app.user %}
 							<li class="nav-item">
-								<a class="nav-link" href="/">Groupes</a>
+								<a class="nav-link" href="group">Groupes</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link position-relative" href="localhost:3000/chat">
@@ -47,13 +47,30 @@
 					<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 						<ul class="navbar-nav">
 							{% if app.user %}
-								{% if is_granted('ROLE_ADMIN') %}
-									<li class="nav-item ml-auto">
-										<a class="nav-link" href="admin" style="color: red;">Administration</a>
-									</li>
-								{% endif %}
-								<li class="nav-item ml-auto">
-									<a class="nav-link" href="logout">Déconnexion</a>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle ml-auto" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										<img src="https://www.handiclubnimois.fr/wp-content/uploads/2020/10/blank-profile-picture-973460_1280.png" alt="" width="27" height="27" style="border-radius: 15px;">
+									</a>
+									<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+										<li>
+											<h6 class="dropdown-header">{{ app.user.nickname }}</h6>
+										</li>
+										<li>
+											<a class="dropdown-item" href="#">Profil</a>
+										</li>
+										{% if is_granted('ROLE_ADMIN') %}
+											<li>
+												<a class="dropdown-item" href="admin" style="color: red;">Administration</a>
+											</li>
+										{% endif %}
+										<li>
+											<a class="dropdown-item" href="#">Paramètres</a>
+										</li>
+										<li><hr class="dropdown-divider"></li>
+										<li>
+											<a class="dropdown-item" href="/logout">Déconnexion</a>
+										</li>
+									</ul>
 								</li>
 							{% else %}
 								<li class="nav-item ml-auto">
