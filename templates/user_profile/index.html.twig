@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ app.user.nickname }}
+	- Profil
+{% endblock %}
+
+{% block body %}
+	<img src="https://www.handiclubnimois.fr/wp-content/uploads/2020/10/blank-profile-picture-973460_1280.png" alt=""/>
+	<label>Nom d'utilisateur</label>
+	<p>{{ app.user.nickname }}</p>
+	<label>Prénom</label>
+	<p>{{ app.user.name }}</p>
+	<label>Nom</label>
+	<p>{{ app.user.lastname }}</p>
+	<label>Email</label>
+	<p>{{ app.user.email }}</p>
+	<label>Pays</label>
+	<p>{{ app.user.country }}</p>
+{% endblock %}

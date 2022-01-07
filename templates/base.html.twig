@@ -2,13 +2,12 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>
 			{% block title %}Bienvenue!
 			{% endblock %}
 		</title>
-		<link
-		rel="icon" href="{{ asset('icons/favicon.ico') }}">
-		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
@@ -17,7 +16,6 @@
 			{{ encore_entry_script_tags('app') }}
 		{% endblock %}
 	</head>
-	
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container-fluid">
@@ -34,10 +32,10 @@
 							<li class="nav-item">
 								<a class="nav-link position-relative" href="localhost:3000/chat">
 									Chat
-									<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-										99+
+									{# <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+										1
 										<span class="visually-hidden">messages non lus</span>
-									</span>
+									</span> #}
 								</a>
 							</li>
 						{% endif %}
@@ -54,7 +52,7 @@
 											<h6 class="dropdown-header">{{ app.user.nickname }}</h6>
 										</li>
 										<li>
-											<a class="dropdown-item" href="#">Profil</a>
+											<a class="dropdown-item" href="profile">Profil</a>
 										</li>
 										{% if is_granted('ROLE_ADMIN') %}
 											<li>
