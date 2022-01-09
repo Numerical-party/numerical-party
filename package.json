@@ -22,13 +22,9 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "@srexi/purecounterjs": "^1.2.1",
         "aos": "^2.3.4",
         "bootstrap-icons": "^1.7.2",
         "express": "^4.17.1",
-        "glightbox": "^3.1.0",
-        "socket.io": "^4.4.0",
-        "swiper": "^7.4.1",
-        "typed.js": "^2.0.12"
+        "socket.io": "^4.4.0"
     }
 }

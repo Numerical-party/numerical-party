@@ -8,10 +8,13 @@
 			{% block title %}Bienvenue!
 			{% endblock %}
 		</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
-
 		{% block javascripts %}
 			{{ encore_entry_script_tags('app') }}
 		{% endblock %}
@@ -33,9 +36,9 @@
 								<a class="nav-link position-relative" href="localhost:3000/chat">
 									Chat
 									{# <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-										1
-										<span class="visually-hidden">messages non lus</span>
-									</span> #}
+											1
+											<span class="visually-hidden">messages non lus</span>
+										</span> #}
 								</a>
 							</li>
 						{% endif %}
